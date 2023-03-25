@@ -39,6 +39,8 @@ return {
     ["cp"] = { ":cprev<CR>" },
     ["co"] = { ":copen<CR>" },
     ["cq"] = { ":cclose<CR>" },
+    -- Grepper
+    ["<leader>qq"] = { "<cmd>Grepper -tool rg<CR>", desc = "Grepper" }
   },
   t = {
     -- setting a mapping to false will disable it

@@ -87,5 +87,9 @@ return {
     --     ["~/%.config/foo/.*"] = "fooscript",
     --   },
     -- }
+    vim.cmd [[
+      nmap <leader>q  <plug>(GrepperOperator)
+      xmap <leader>q  <plug>(GrepperOperator)
+    ]]
   end,
 }
