@@ -20,9 +20,20 @@ return {
       return opts
     end,
   },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    opts = function(_, opts)
+      opts.char = "┊"
+      opts.show_trailing_blankline_indent = false
+      opts.show_current_context = false
+    end,
+  },
+
   -- You can disable default plugins as follows:
-  -- { "max397574/better-escape.nvim", enabled = false },
-  --
+  { "max397574/better-escape.nvim", enabled = false },
+  { "rebelot/heirline.nvim",        enabled = false },
+  { "rcarriga/nvim-notify",         enabled = false },
+
   -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
   -- {
   --   "L3MON4D3/LuaSnip",
