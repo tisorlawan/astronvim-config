@@ -1,5 +1,8 @@
 return {
   -- customize alpha options
+  { "max397574/better-escape.nvim", enabled = false },
+  { "rebelot/heirline.nvim",        enabled = false },
+  { "rcarriga/nvim-notify",         enabled = false },
   {
     "goolord/alpha-nvim",
     opts = function(_, opts)
@@ -29,10 +32,23 @@ return {
     end,
   },
 
-  -- You can disable default plugins as follows:
-  { "max397574/better-escape.nvim", enabled = false },
-  { "rebelot/heirline.nvim",        enabled = false },
-  { "rcarriga/nvim-notify",         enabled = false },
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      "hrsh7th/cmp-nvim-lsp-signature-help",
+    },
+    opts = function(_, opts)
+      local cmp = require "cmp"
+      opts.sources = cmp.config.sources {
+        { name = "nvim_lsp_signature_help" },
+        { name = "nvim_lsp",               priority = 1000 },
+        { name = "luasnip",                priority = 750 },
+        { name = "buffer",                 priority = 500 },
+        { name = "path",                   priority = 250 },
+      }
+      return opts
+    end,
+  },
 
   -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
   -- {
