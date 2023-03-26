@@ -10,6 +10,7 @@ return {
     showtabline = 1,
     cmdheight = 1,
     laststatus = 2,
+    scrolloff = 12
   },
   g = {
     mapleader = " ",                 -- sets vim.g.mapleader

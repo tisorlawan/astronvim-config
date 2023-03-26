@@ -91,5 +91,11 @@ return {
       nmap <leader>q  <plug>(GrepperOperator)
       xmap <leader>q  <plug>(GrepperOperator)
     ]]
+
+    local semiColonGrp = vim.api.nvim_create_augroup("SemicolonGroup", { clear = true })
+    vim.api.nvim_create_autocmd(
+      { "FileType" },
+      { pattern = { "svelte", "rust" }, command = [[ lua require('user.utils').SemiColonConfig()]], group = semiColonGrp }
+    )
   end,
 }
