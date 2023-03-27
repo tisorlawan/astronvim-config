@@ -83,17 +83,18 @@ return {
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
     -- Set up custom filetypes
-    -- vim.filetype.add {
-    --   extension = {
-    --     foo = "fooscript",
-    --   },
-    --   filename = {
-    --     ["Foofile"] = "fooscript",
-    --   },
-    --   pattern = {
-    --     ["~/%.config/foo/.*"] = "fooscript",
-    --   },
-    -- }
+    vim.filetype.add {
+      --   extension = {
+      --     foo = "fooscript",
+      --   },
+      filename = {
+        [".env"] = "bash",
+        [".env.example"] = "bash",
+      },
+      --   pattern = {
+      --     ["~/%.config/foo/.*"] = "fooscript",
+      --   },
+    }
     vim.cmd [[
       nmap <leader>q  <plug>(GrepperOperator)
       xmap <leader>q  <plug>(GrepperOperator)
