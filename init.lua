@@ -30,6 +30,11 @@ return {
       if client.server_capabilities.documentHighlightProvider then
         vim.api.nvim_del_augroup_by_name "lsp_document_highlight"
       end
+
+      -- if client.name == "tsserver" then
+      --   local ns = vim.lsp.diagnostic.get_namespace(client.id)
+      --   vim.diagnostic.disable(nil, ns)
+      -- end
     end,
     formatting = {
       format_on_save = {
