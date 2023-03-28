@@ -95,6 +95,8 @@ return {
       filename = {
         [".env"] = "bash",
         [".env.example"] = "bash",
+        [".env.production"] = "bash",
+        [".env.development"] = "bash",
       },
       --   pattern = {
       --     ["~/%.config/foo/.*"] = "fooscript",
