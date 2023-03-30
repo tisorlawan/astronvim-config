@@ -32,3 +32,9 @@ return {
 --
 --   return local_vim
 -- end
+--   return local_vim
+-- end
+--   local_vim.opt.shortmess = vim.opt.shortmess + { I = true } -- add to option list
+--
+--   return local_vim
+-- end

@@ -16,7 +16,6 @@ function M.create_buffer()
   end
 end
 
--- RUST
 function M.SemiColonConfig()
   vim.cmd [[
 		inoremap <buffer> <C-d> <End>;
