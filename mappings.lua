@@ -29,7 +29,18 @@ return {
     -- [[<Cmd>execute 'e ' .. expand('%:p:h')<CR>]]
     ["-"] = { "<cmd>lua require'lir.float'.toggle()<CR>", desc = "Lir" },
     ["<leader>xn"] = { require("user.utils").create_buffer, desc = "Create adjacent file" },
-    ["<leader><tab>"] = { "<C-^>", desc = "Toggle buffer" },
+    -- Dotfiles
+    ["<leader>fd"] = { require("user.utils").find_dotfiles, desc = "Find dotfiles" },
+    -- Harpoon
+    ["<leader><tab>"] = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", desc = "Harpoon toogle menu" },
+    ["<leader>a"] = { "<cmd>lua require('harpoon.mark').add_file()<CR>", desc = "Harpoon add mark" },
+    ["<leader>fs"] = { "<cmd>Telescope harpoon marks<CR>", desc = "Telescope harpoon" },
+    ["<leader><leader>"] = { "<cmd>lua require('harpoon.ui').nav_next()<CR>" },
+    ["<C-n>"] = { "<cmd>lua require('harpoon.ui').nav_next()<CR>" },
+    ["<C-p>"] = { "<cmd>lua require('harpoon.ui').nav_prev()<CR>" },
+    -- Buffer manipulation
+    ["<M-n>"] = { "<cmd>bnext<CR>" },
+    ["<M-p>"] = { "<cmd>bprev<CR>" },
     -- Hop
     ["<leader>s"] = { "<cmd>HopChar1<Cr>", desc = "Hop 1 Character" },
     -- Neogit

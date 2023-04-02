@@ -22,4 +22,11 @@ function M.SemiColonConfig()
 	]]
 end
 
+function M.find_dotfiles()
+  require("telescope.builtin").git_files {
+    prompt_title = "<Dotfiles>",
+    cwd = "$HOME/.rice/",
+  }
+end
+
 return M
