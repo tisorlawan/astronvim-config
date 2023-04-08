@@ -1,10 +1,11 @@
 return {
   -- customize alpha options
   { "max397574/better-escape.nvim", enabled = false },
-  { "rebelot/heirline.nvim", enabled = false },
-  { "rcarriga/nvim-notify", enabled = false },
+  { "rebelot/heirline.nvim",        enabled = false },
+  { "rcarriga/nvim-notify",         enabled = false },
   {
     "goolord/alpha-nvim",
+    enabled = false,
     opts = function(_, opts)
       opts.section.header.val = {
         "██    ██ ██ ███    ███",
@@ -18,6 +19,7 @@ return {
   },
   {
     "lukas-reineke/indent-blankline.nvim",
+    enabled = false,
     opts = function(_, opts)
       opts.char = "┊"
       opts.show_trailing_blankline_indent = false
@@ -34,10 +36,10 @@ return {
       local cmp = require "cmp"
       opts.sources = cmp.config.sources {
         { name = "nvim_lsp_signature_help" },
-        { name = "nvim_lsp", priority = 1000 },
-        { name = "luasnip", priority = 750 },
-        { name = "buffer", priority = 500 },
-        { name = "path", priority = 250 },
+        { name = "nvim_lsp",               priority = 1000 },
+        { name = "luasnip",                priority = 750 },
+        { name = "buffer",                 priority = 500 },
+        { name = "path",                   priority = 250 },
       }
       return opts
     end,

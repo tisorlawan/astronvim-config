@@ -12,6 +12,9 @@ return {
     laststatus = 2,
     scrolloff = 12,
     timeoutlen = 500,
+    numberwidth = 3,
+    statuscolumn = "%s%=%{v:virtnum < 1 ? (v:relnum ? v:relnum : v:lnum < 10 ? v:lnum . '  ' : v:lnum) : ''} ",
+    -- "%=%{v:virtnum < 1 ? (v:relnum ? v:relnum : v:lnum < 10 ? v:lnum . '  ' : v:lnum) : ''}%=%s"
   },
   g = {
     mapleader = " ",                 -- sets vim.g.mapleader
