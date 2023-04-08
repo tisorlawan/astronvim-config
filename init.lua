@@ -100,7 +100,7 @@ return {
         [".env.production"] = "bash",
         [".env.development"] = "bash",
         [".env.template"] = "bash",
-        ["justfile"] = "make",
+        -- ["justfile"] = "make",
       },
       --   pattern = {
       --     ["~/%.config/foo/.*"] = "fooscript",

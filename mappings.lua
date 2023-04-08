@@ -31,8 +31,9 @@ return {
     ["<leader>xn"] = { require("user.utils").create_buffer, desc = "Create adjacent file" },
     -- Dotfiles
     ["<leader>fd"] = { require("user.utils").find_dotfiles, desc = "Find dotfiles" },
+    ["<leader><tab>"] = { "<C-^>", desc = "Harpoon toogle menu" },
     -- Harpoon
-    ["<leader><tab>"] = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", desc = "Harpoon toogle menu" },
+    ["<leader>h"] = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", desc = "Harpoon toogle menu" },
     ["<leader>a"] = { "<cmd>lua require('harpoon.mark').add_file()<CR>", desc = "Harpoon add mark" },
     ["<leader>fs"] = { "<cmd>Telescope harpoon marks<CR>", desc = "Telescope harpoon" },
     ["<leader><leader>"] = { "<cmd>lua require('harpoon.ui').nav_next()<CR>" },
