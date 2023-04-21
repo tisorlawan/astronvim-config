@@ -1,6 +1,11 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
+    enabled = true,
+    highlight = {
+      enable = true,
+      additional_vim_regex_highlighting = false,
+    },
     opts = {
       ensure_installed = "all",
       indent = {
