@@ -1,7 +1,11 @@
 {
   "setup": {
-    "prefix": ["ifn"],
-    "body": ["if err != nil {\n  ${1:log.Fatal()}\n}"],
+    "prefix": [
+      "ifn"
+    ],
+    "body": [
+      "if err != nil {\n  ${1:log.Fatal()}\n}"
+    ],
     "description": "if err != nil"
   }
 }
