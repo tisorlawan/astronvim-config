@@ -18,7 +18,7 @@ return {
     },
   },
   -- Set colorscheme to use
-  colorscheme = "kanagawa-wave",
+  colorscheme = "no-clown-fiesta",
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
     virtual_text = true,
