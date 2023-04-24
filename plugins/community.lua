@@ -5,8 +5,6 @@ return {
   -- available plugins can be found at https://github.com/AstroNvim/astrocommunity
 
   { import = "astrocommunity.colorscheme.kanagawa", enabled = true },
-  { import = "astrocommunity.colorscheme.catppuccin", enabled = true },
-  -- { import = "astrocommunity.motion.harpoon", enabled = true },
   --
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
   { import = "astrocommunity.motion.mini-surround" },
@@ -24,39 +22,6 @@ return {
   { import = "astrocommunity.pack.typescript" },
 
   { import = "astrocommunity.debugging.nvim-bqf" },
-
-  {
-    "catppuccin",
-    opts = {
-      flavour = "mocha",
-      color_overrides = {
-        mocha = {
-          base = "#101010",
-        },
-      },
-      integrations = {
-        native_lsp = {
-          enabled = true,
-          virtual_text = {
-            errors = { "bold" },
-            hints = { "italic" },
-            warnings = { "italic" },
-            information = { "italic" },
-          },
-          underlines = {
-            errors = { "underline" },
-            hints = { "underline" },
-            warnings = { "underline" },
-            information = { "underline" },
-          },
-        },
-        cmp = true,
-        gitsigns = true,
-        nvimtree = true,
-        telescope = true,
-      },
-    },
-  },
 
   {
     "kanagawa.nvim",
