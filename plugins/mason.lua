@@ -5,7 +5,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     opts = function(_, opts)
       if not opts.ensure_installed then opts.ensure_installed = {} end
-      utils.list_insert_unique(opts.ensure_installed, { "pyright", "eslint", "prismals" })
+      utils.list_insert_unique(opts.ensure_installed, { "rust_analyzer", "pyright", "eslint", "prismals" })
     end,
   },
   {

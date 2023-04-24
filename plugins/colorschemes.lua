@@ -16,4 +16,16 @@ return {
       }
     end,
   },
+  {
+    "kdheepak/monochrome.nvim",
+  },
+  {
+    "mcchrish/zenbones.nvim",
+    dependencies = {
+      "rktjmp/lush.nvim",
+    },
+  },
+  {
+    "jaredgorski/fogbell.vim",
+  },
 }
