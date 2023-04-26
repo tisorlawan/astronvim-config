@@ -5,7 +5,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     opts = function(_, opts)
       if not opts.ensure_installed then opts.ensure_installed = {} end
-      utils.list_insert_unique(opts.ensure_installed, { "rust_analyzer", "pyright", "eslint", "prismals" })
+      utils.list_insert_unique(opts.ensure_installed, { "rust_analyzer", "pyright", "eslint", "prismals", "ruff_lsp" })
     end,
   },
   {
@@ -14,7 +14,7 @@ return {
       -- Ensure that opts.ensure_installed exists and is a table.
       if not opts.ensure_installed then opts.ensure_installed = {} end
       -- Add to opts.ensure_installed using vim.list_extend.
-      utils.list_insert_unique(opts.ensure_installed, { "isort", "black", "ruff", "golangci_lint" })
+      utils.list_insert_unique(opts.ensure_installed, { "isort", "black", "golangci_lint" })
     end,
   },
   {

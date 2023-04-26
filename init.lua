@@ -21,7 +21,8 @@ return {
   colorscheme = "kanagawa-wave",
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
-    virtual_text = true,
+    virtual_text = false,
+    signs = false,
     underline = false,
   },
   lsp = {
@@ -54,9 +55,6 @@ return {
     -- enable servers that you already have installed without mason
     servers = {},
     config = {
-      ruff_lsp = {
-        on_attach = function(client, _) client.server_capabilities.hoverProvider = false end,
-      },
       pyright = {
         handlers = {
           ["textDocument/publishDiagnostics"] = function() end,
@@ -130,5 +128,23 @@ return {
       command = [[ lua require('user.utils').SemiColonConfig()]],
       group = semiColonGrp,
     })
+
+    local ns = vim.api.nvim_create_namespace "diagnostics_namespace"
+
+    function show_diagnostics(bufnr)
+      local diags = vim.diagnostic.get(bufnr)
+      vim.diagnostic.show(ns, bufnr, diags, {
+        virtual_text = true,
+        signs = true,
+        underline = false,
+      })
+    end
+
+    vim.cmd [[
+      augroup test
+      autocmd!
+      autocmd BufWritePost * lua show_diagnostics(tonumber(vim.fn.expand("<abuf>")))
+      augroup END
+    ]]
   end,
 }

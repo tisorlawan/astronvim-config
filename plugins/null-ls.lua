@@ -5,11 +5,7 @@ return {
   opts = function(_, opts)
     opts.debug = true
 
-    local sources = {
-      nls.builtins.diagnostics.ruff.with {
-        method = nls.methods.DIAGNOSTICS_ON_SAVE,
-      },
-    }
+    local sources = {}
 
     if type(opts.sources) == "table" then
       vim.list_extend(opts.sources, sources)
