@@ -46,6 +46,7 @@ return {
       },
       disabled = { -- disable formatting capabilities for the listed language servers
         "sumneko_lua",
+        "sqls",
       },
       timeout_ms = 1000, -- default format timeout
       -- filter = function(client) -- fully override the default formatting function
@@ -53,7 +54,6 @@ return {
       -- end
     },
     -- enable servers that you already have installed without mason
-    servers = {},
     config = {
       pyright = {
         handlers = {
@@ -83,6 +83,9 @@ return {
             },
           },
         },
+      },
+      sqls = {
+        on_attach = function(client, bufnr) require("sqls").on_attach(client, bufnr) end,
       },
     },
   },
@@ -128,6 +131,16 @@ return {
       pattern = { "svelte", "rust" },
       command = [[ lua require('user.utils').SemiColonConfig()]],
       group = semiColonGrp,
+    })
+
+    local sqlRunner = vim.api.nvim_create_augroup("SQLRunner", { clear = true })
+    vim.api.nvim_create_autocmd({ "FileType" }, {
+      pattern = { "sql" },
+      command = [[
+      nnoremap <buffer> <leader>r :SqlsExecuteQuery<CR>;
+      vnoremap <buffer> <leader>r :SqlsExecuteQuery<CR>;
+      ]],
+      group = sqlRunner,
     })
 
     -- https://github.com/neovim/neovim/issues/16076
