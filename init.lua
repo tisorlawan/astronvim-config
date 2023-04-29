@@ -59,7 +59,7 @@ return {
         handlers = {
           ["textDocument/publishDiagnostics"] = function() end,
         },
-        on_attach = function(client, _) client.server_capabilities.codeActionProvider = true end,
+        on_attach = function(client, bufnr) client.server_capabilities.codeActionProvider = true end,
         settings = {
           pyright = {
             disableOrganizeImports = true,

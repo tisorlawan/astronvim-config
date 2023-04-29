@@ -53,6 +53,8 @@ return {
     ["cq"] = { ":cclose<CR>" },
     -- Grepper
     ["<leader>qq"] = { "<cmd>Grepper -tool rg<CR>", desc = "Grepper" },
+    -- Navbuddy
+    ["<leader>n"] = { "<cmd>Navbuddy<CR>", desc = "Navbuddy" },
   },
   t = {
     -- setting a mapping to false will disable it
