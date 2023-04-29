@@ -14,7 +14,7 @@ return {
       -- Ensure that opts.ensure_installed exists and is a table.
       if not opts.ensure_installed then opts.ensure_installed = {} end
       -- Add to opts.ensure_installed using vim.list_extend.
-      utils.list_insert_unique(opts.ensure_installed, { "isort", "black", "golangci_lint", "sql_formatter" })
+      utils.list_insert_unique(opts.ensure_installed, { "isort", "black", "sql_formatter" })
     end,
   },
   {
