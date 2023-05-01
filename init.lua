@@ -3,15 +3,15 @@ return {
   --
   --
   updater = {
-    remote = "origin", -- remote to use
-    channel = "stable", -- "stable" or "nightly"
-    version = "latest", -- "latest", tag name, or regex search like "v1.*" to only do updates before v2 (STABLE ONLY)
-    branch = "nightly", -- branch name (NIGHTLY ONLY)
-    commit = nil, -- commit hash (NIGHTLY ONLY)
-    pin_plugins = nil, -- nil, true, false (nil will pin plugins on stable only) skip_prompts = false,  -- skip prompts about breaking changes
+    remote = "origin",     -- remote to use
+    channel = "stable",    -- "stable" or "nightly"
+    version = "latest",    -- "latest", tag name, or regex search like "v1.*" to only do updates before v2 (STABLE ONLY)
+    branch = "nightly",    -- branch name (NIGHTLY ONLY)
+    commit = nil,          -- commit hash (NIGHTLY ONLY)
+    pin_plugins = nil,     -- nil, true, false (nil will pin plugins on stable only) skip_prompts = false,  -- skip prompts about breaking changes
     show_changelog = true, -- show the changelog after performing an update
-    auto_quit = false, -- automatically quit the current session after a successful update
-    remotes = { -- easily add new remotes to track
+    auto_quit = false,     -- automatically quit the current session after a successful update
+    remotes = {            -- easily add new remotes to track
       --   ["remote_name"] = "https://remote_url.come/repo.git", -- full remote url
       --   ["remote2"] = "github_user/repo", -- GitHub user/repo shortcut,
       --   ["remote3"] = "github_user", -- GitHub user assume AstroNvim fork
@@ -45,9 +45,6 @@ return {
         allow_filetypes = {},
         ignore_filetypes = {},
       },
-      disabled = { -- disable formatting capabilities for the listed language servers
-        "sqls",
-      },
       timeout_ms = 1000, -- default format timeout
       -- filter = function(client) -- fully override the default formatting function
       --   return true
@@ -57,7 +54,8 @@ return {
     config = {
       pyright = {
         handlers = {
-          ["textDocument/publishDiagnostics"] = function() end,
+          ["textDocument/publishDiagnostics"] = function()
+          end,
         },
         on_attach = function(client, bufnr) client.server_capabilities.codeActionProvider = true end,
         settings = {
@@ -72,9 +70,6 @@ return {
             },
           },
         },
-      },
-      sqls = {
-        on_attach = function(client, bufnr) require("sqls").on_attach(client, bufnr) end,
       },
     },
   },
@@ -121,17 +116,5 @@ return {
       command = [[ lua require('user.utils').SemiColonConfig()]],
       group = semiColonGrp,
     })
-
-    local sqlRunner = vim.api.nvim_create_augroup("SQLRunner", { clear = true })
-    vim.api.nvim_create_autocmd({ "FileType" }, {
-      pattern = { "sql" },
-      command = [[
-      nnoremap <buffer> <leader>r :SqlsExecuteQuery<CR>;
-      vnoremap <buffer> <leader>r :SqlsExecuteQuery<CR>;
-      ]],
-      group = sqlRunner,
-    })
-
-    -- https://github.com/neovim/neovim/issues/16076
   end,
 }
