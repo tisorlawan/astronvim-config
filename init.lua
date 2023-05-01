@@ -18,10 +18,9 @@ return {
     },
   },
   -- Set colorscheme to use
-  colorscheme = "nordic",
+  -- colorscheme = "nordic",
   -- colorscheme = "no-clown-fiesta",
-  -- colorscheme = "kanagawa-wave",
-
+  colorscheme = "kanagawa-wave",
   diagnostics = {
     virtual_text = true,
     signs = true,
