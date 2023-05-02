@@ -9,6 +9,7 @@ return {
   i = {
     ["<C-l>"] = { "<Right>" },
     ["<C-h>"] = { "<Left>" },
+    ["<C-o><C-o>"] = { "<ESC>o" },
   },
   n = {
     -- second key is the lefthand side of the map

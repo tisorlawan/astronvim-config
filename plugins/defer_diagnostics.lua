@@ -3,7 +3,7 @@ return {
   config = function()
     require("dd").setup {
       -- The time to wait before displaying newly produced diagnostics.
-      timeout = 0,
+      timeout = 50,
     }
   end,
   event = "BufRead",
