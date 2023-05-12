@@ -6,6 +6,7 @@ return {
     opts = function(_, opts)
       if not opts.ensure_installed then opts.ensure_installed = {} end
       utils.list_insert_unique(opts.ensure_installed, { "pyright", "eslint", "prismals", "ruff_lsp", "sqlls" })
+      -- utils.list_insert_unique(opts.ensure_installed, { "pyright", "prismals", "ruff_lsp", "sqlls" })
     end,
   },
   {
