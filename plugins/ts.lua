@@ -1,5 +1,4 @@
 local utils = require "astronvim.utils"
-local events = require "neo-tree.events"
 
 local function on_file_remove(args)
   local ts_clients = vim.lsp.get_active_clients { name = "tsserver" }
@@ -56,9 +55,9 @@ return {
         null_ls.register(null_ls.builtins.formatting.prettierd.with {
           condition = function(util)
             return util.root_has_file "package.json"
-              or util.root_has_file ".prettierrc"
-              or util.root_has_file ".prettierrc.json"
-              or util.root_has_file ".prettierrc.js"
+                or util.root_has_file ".prettierrc"
+                or util.root_has_file ".prettierrc.json"
+                or util.root_has_file ".prettierrc.js"
           end,
         })
       end
@@ -68,8 +67,8 @@ return {
         null_ls.register(null_ls.builtins.diagnostics.eslint_d.with {
           condition = function(util)
             return util.root_has_file "package.json"
-              or util.root_has_file ".eslintrc.json"
-              or util.root_has_file ".eslintrc.js"
+                or util.root_has_file ".eslintrc.json"
+                or util.root_has_file ".eslintrc.js"
           end,
         })
       end
@@ -100,20 +99,5 @@ return {
       "javascriptreact",
     },
     opts = function() return { server = require("astronvim.utils.lsp").config "tsserver" } end,
-  },
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    opts = {
-      event_handlers = {
-        {
-          event = events.FILE_MOVED,
-          handler = on_file_remove,
-        },
-        {
-          event = events.FILE_RENAMED,
-          handler = on_file_remove,
-        },
-      },
-    },
   },
 }
