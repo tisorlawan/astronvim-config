@@ -5,4 +5,5 @@ return {
     "nvim-lua/plenary.nvim",
   },
   config = function() require("user.configs.lir").setup() end,
+  enabled = true,
 }

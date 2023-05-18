@@ -3,26 +3,8 @@ return {
   { "max397574/better-escape.nvim", enabled = false },
   { "rebelot/heirline.nvim",        enabled = false },
   { "rcarriga/nvim-notify",         enabled = false },
-  {
-    "goolord/alpha-nvim",
-    enabled = false,
-    opts = function(_, opts)
-      opts.section.header.val = {
-        "██    ██ ██ ███    ███",
-        "██    ██ ██ ████  ████",
-        "██    ██ ██ ██ ████ ██",
-        " ██  ██  ██ ██  ██  ██",
-        "  ████   ██ ██      ██",
-      }
-      return opts
-    end,
-  },
-
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    enabled = false,
-  },
-
+  { "goolord/alpha-nvim",           enabled = false },
+  { "nvim-neo-tree/neo-tree.nvim",  enabled = false },
   {
     "lukas-reineke/indent-blankline.nvim",
     enabled = false,

@@ -28,12 +28,12 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
-    -- [[<Cmd>execute 'e ' .. expand('%:p:h')<CR>]]
-    ["-"] = { "<cmd>lua require'lir.float'.toggle()<CR>", desc = "Lir" },
+    -- ["-"] = { require("user.utils").edit_filedir, desc = "Lir" },
+    ["-"] = { "<cmd>lua require'lir.float'.toggle()<CR>", desc = "Lir float" },
     ["<leader>xn"] = { require("user.utils").create_buffer, desc = "Create adjacent file" },
     -- Dotfiles
     ["<leader>fd"] = { require("user.utils").find_dotfiles, desc = "Find dotfiles" },
-    ["<leader><tab>"] = { "<C-^>", desc = "Harpoon toogle menu" },
+    ["<leader><tab>"] = { "<C-^>", desc = "Alternative buffer" },
     -- Harpoon
     ["<leader>h"] = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", desc = "Harpoon toogle menu" },
     ["<leader>a"] = { "<cmd>lua require('harpoon.mark').add_file()<CR>", desc = "Harpoon add mark" },
@@ -56,6 +56,8 @@ return {
     ["<leader>qq"] = { "<cmd>Grepper -tool rg<CR>", desc = "Grepper" },
     -- Navbuddy
     ["<leader>n"] = { "<cmd>Navbuddy<CR>", desc = "Navbuddy" },
+    -- NvimTree
+    ["<leader>e"] = { "<cmd>NvimTreeFindFileToggle<CR>", desc = "NvimTreeToggle" },
   },
   t = {
     -- setting a mapping to false will disable it

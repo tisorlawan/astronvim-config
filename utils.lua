@@ -16,6 +16,12 @@ function M.create_buffer()
   end
 end
 
+function M.edit_filedir()
+  local dir = vim.fn.expand "%:p:h"
+
+  vim.cmd("edit " .. dir)
+end
+
 function M.SemiColonConfig()
   vim.cmd [[
 		inoremap <buffer> <C-d> <End>;
