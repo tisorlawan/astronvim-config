@@ -9,7 +9,7 @@ return {
     swapfile = false,
     showtabline = 1,
     cmdheight = 1,
-    laststatus = 3,
+    laststatus = 2,
     scrolloff = 12,
     timeoutlen = 500,
     numberwidth = 3,
