@@ -29,7 +29,8 @@ return {
     -- quick save
     ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
     -- ["-"] = { require("user.utils").edit_filedir, desc = "Lir" },
-    ["-"] = { "<cmd>lua require'lir.float'.toggle()<CR>", desc = "Lir float" },
+    -- ["-"] = { "<cmd>lua require'lir.float'.toggle()<CR>", desc = "Lir float" },
+    -- ["-"] = { require("oil").open, desc = "Open parent directory" },
     ["<leader>xn"] = { require("user.utils").create_buffer, desc = "Create adjacent file" },
     -- Dotfiles
     ["<leader>fd"] = { require("user.utils").find_dotfiles, desc = "Find dotfiles" },
