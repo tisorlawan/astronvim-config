@@ -4,7 +4,7 @@ return {
   -- example of imporing a plugin, comment out to use it or add your own
   -- available plugins can be found at https://github.com/AstroNvim/astrocommunity
 
-  { import = "astrocommunity.colorscheme.kanagawa", enabled = true },
+  { import = "astrocommunity.colorscheme.kanagawa-nvim",         enabled = true },
   --
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
   { import = "astrocommunity.editing-support.zen-mode-nvim" },
@@ -34,14 +34,14 @@ return {
       statementStyle = { bold = true },
       typeStyle = {},
       variablebuiltinStyle = { italic = true },
-      specialReturn = true, -- special highlight for the return keyword
+      specialReturn = true,    -- special highlight for the return keyword
       specialException = true, -- special highlight for exception handling keywords
-      transparent = false, -- do not set background color
-      dimInactive = false, -- dim inactive window `:h hl-NormalNC`
-      globalStatus = true, -- adjust window separators highlight for laststatus=3
-      terminalColors = true, -- define vim.g.terminal_color_{0,17}
+      transparent = false,     -- do not set background color
+      dimInactive = false,     -- dim inactive window `:h hl-NormalNC`
+      globalStatus = true,     -- adjust window separators highlight for laststatus=3
+      terminalColors = true,   -- define vim.g.terminal_color_{0,17}
       colors = {},
-      theme = "default", -- Load "default" theme or the experimental "light" theme
+      theme = "default",       -- Load "default" theme or the experimental "light" theme
       overrides = function(colors)
         local theme = colors.theme
         return {

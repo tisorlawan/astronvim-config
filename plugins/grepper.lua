@@ -3,6 +3,9 @@ return {
   cmd = "Grepper",
   event = "BufRead",
   config = function()
-    require("user.configs.grepper").setup()
+    vim.cmd [[
+		let g:grepper.tools = ['rg', 'git', 'ag']
+	]]
+    vim.g.grepper.quickfix = 1
   end,
 }

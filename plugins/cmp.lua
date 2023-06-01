@@ -66,24 +66,24 @@ return {
     -- modify the mapping part of the table
     opts.mapping["<C-x>"] = cmp.mapping.select_next_item()
 
-    opts.formatting = {
-      format = function(entry, vim_item)
-        -- Kind icons
-        -- vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
-        vim_item.kind = string.format("%s", kind_icons[vim_item.kind]) -- This concatonates the icons with the name of the item kind
-        -- Source
-        vim_item.menu = ({
-          nvim_lsp = "[LSP]",
-          buffer = "[Buffer]",
-          luasnip = "[Snip]",
-          nvim_lua = "[Lua]",
-          treesitter = "[Treesitter]",
-          path = "[Path]",
-          nvim_lsp_signature_help = "[Signature]",
-        })[entry.source.name]
-        return vim_item
-      end,
-    }
+    -- opts.formatting = {
+    --   format = function(entry, vim_item)
+    --     -- Kind icons
+    --     -- vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+    --     vim_item.kind = string.format("%s", kind_icons[vim_item.kind]) -- This concatonates the icons with the name of the item kind
+    --     -- -- Source
+    --     -- vim_item.menu = ({
+    --     --   nvim_lsp = "[L]",
+    --     --   buffer = "[B]",
+    --     --   luasnip = "[S]",
+    --     --   nvim_lua = "[Lua]",
+    --     --   treesitter = "[T]",
+    --     --   path = "[P]",
+    --     --   nvim_lsp_signature_help = "[S]",
+    --     -- })[entry.source.name]
+    --     return vim_item
+    --   end,
+    -- }
 
     opts.window = {
       completion = {

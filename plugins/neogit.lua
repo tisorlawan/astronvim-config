@@ -2,12 +2,27 @@ return {
   {
     "TimUntersberger/neogit",
     cmd = { "Neogit" },
-    config = function() require("user.configs.neogit").setup() end,
+    config = function()
+      local status_ok, neogit = pcall(require, "neogit")
+      if not status_ok then return end
+      neogit.setup {
+        integrations = {
+          -- Neogit only provides inline diffs. If you want a more traditional way to look at diffs, you can use `sindrets/diffview.nvim`.
+          -- The diffview integration enables the diff popup, which is a wrapper around `sindrets/diffview.nvim`.
+          --
+          -- Requires you to have `sindrets/diffview.nvim` installed.
+          -- use {
+          --   'TimUntersberger/neogit',
+          --   requires = {
+          --     'nvim-lua/plenary.nvim',
+          --     'sindrets/diffview.nvim'
+          --   }
+          -- }
+          --
+          diffview = true,
+        },
+      }
+    end,
     dependencies = "nvim-lua/plenary.nvim",
-  },
-  {
-    "sindrets/diffview.nvim",
-    module = { "diffview" },
-    config = function() require("user.configs.diffview").setup() end,
   },
 }
