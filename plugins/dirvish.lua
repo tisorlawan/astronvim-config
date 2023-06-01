@@ -1,10 +1,10 @@
 return {
   {
     "justinmk/vim-dirvish",
-    lazy = false,
+    event = "VeryLazy",
   },
   {
     "roginfarrer/vim-dirvish-dovish",
-    lazy = false,
+    event = "VeryLazy",
   },
 }

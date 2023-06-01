@@ -1,7 +1,7 @@
 return {
   "mhinz/vim-grepper",
   cmd = "Grepper",
-  event = "BufRead",
+  event = "VeryLazy",
   config = function()
     vim.cmd [[
 		let g:grepper.tools = ['rg', 'git', 'ag']

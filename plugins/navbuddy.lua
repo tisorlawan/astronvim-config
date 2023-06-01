@@ -4,6 +4,7 @@ return {
     "SmiteshP/nvim-navic",
     "MunifTanjim/nui.nvim",
   },
+  event = "VeryLazy",
   opts = {
     lsp = {
       auto_attach = true,
@@ -37,5 +38,4 @@ return {
       TypeParameter = " ",
     },
   },
-  event = "BufRead",
 }

@@ -6,5 +6,5 @@ return {
       timeout = 50,
     }
   end,
-  event = "BufRead",
+  event = "VeryLazy",
 }

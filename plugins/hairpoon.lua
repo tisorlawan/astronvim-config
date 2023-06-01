@@ -1,4 +1,4 @@
 return {
   "ThePrimeagen/harpoon",
-  event = "BufRead",
+  event = "VeryLazy",
 }
