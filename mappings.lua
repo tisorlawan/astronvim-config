@@ -56,7 +56,7 @@ return {
     -- Grepper
     ["<leader>qq"] = { "<cmd>Grepper -tool rg<CR>", desc = "Grepper" },
     -- Navbuddy
-    -- ["<leader>nv"] = { "<cmd>Navbuddy<CR>", desc = "Navbuddy" },
+    ["<leader>n"] = { "<cmd>Navbuddy<CR>", desc = "Navbuddy" },
     -- NvimTree
     ["<leader>e"] = { "<cmd>NvimTreeFindFileToggle<CR>", desc = "NvimTreeToggle" },
   },
